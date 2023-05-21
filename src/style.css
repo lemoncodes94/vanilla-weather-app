@@ -56,3 +56,11 @@ li::first-letter {
   font-weight: 400;
   line-height: 1;
 }
+.weather-temperature .active {
+  color: rgb(32, 33, 36);
+  cursor: default;
+  text-decoration: none;
+}
+.weather-temperature .active:hover {
+  text-decoration: none;
+}
