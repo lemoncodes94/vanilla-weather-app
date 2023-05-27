@@ -46,7 +46,7 @@ function showForecast(response) {
               
               <img src=${forecastDay.condition.icon_url} alt="${
           forecastDay.condition.description
-        }" width="45">
+        }" width="60">
               <div class="weather-forecast-temperature">
                 <span class="weather-forecast-temperature-max"> ${Math.round(
                   forecastDay.temperature.maximum

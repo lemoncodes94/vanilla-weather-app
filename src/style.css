@@ -7,11 +7,12 @@ h1 {
   font-size: 30px;
   font-weight: 100;
   line-height: 28px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 ul {
   margin: 0;
   padding: 0;
+  margin-bottom: 20px;
 }
 li {
   list-style: none;
@@ -26,13 +27,14 @@ li::first-letter {
   text-transform: capitalize;
 }
 .weather-app-wrapper {
-  max-width: 600px;
-  margin: 30px auto;
+  max-width: 800px;
+  margin: 50px auto;
 }
 .weather-app {
   padding: 20px;
   border: 1px solid #dadde1;
   border-radius: 5px;
+  max-height: 800px;
 }
 .overview {
   margin-bottom: 20px;
@@ -40,8 +42,8 @@ li::first-letter {
 
 .weather-temperature img {
   margin-right: 7px;
-  height: 80px;
-  width: 80px;
+  height: 100px;
+  width: 100px;
 }
 
 .units {
