@@ -21,7 +21,8 @@ function formatDate(timestamp) {
   return `${day} ${hours}:${minutes}`;
 }
 
-function showForecast() {
+function showForecast(response) {
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="row">`;
@@ -51,6 +52,15 @@ function showForecast() {
   console.log(forecastHTML);
 }
 
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "a5825o278b27ea6f2fde39eft437708c";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.longitude}&lat=${coordinates.latitude}&key=${apiKey}&units=metric`;
+
+  console.log(apiUrl);
+  axios.get(apiUrl).then(showForecast);
+}
+
 function showTemperature(response) {
   let temperatureElement = document.querySelector("#temperature");
   let cityElement = document.querySelector("#city");
@@ -73,7 +83,10 @@ function showTemperature(response) {
     `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`
   );
   iconElement.setAttribute("alt", response.data.condition.description);
+
+  getForecast(response.data.coordinates);
 }
+
 function search(city) {
   let apiKey = "a5825o278b27ea6f2fde39eft437708c";
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
@@ -114,4 +127,3 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", showCelsiusTemperature);
 
 search("Glasgow");
-showForecast();
